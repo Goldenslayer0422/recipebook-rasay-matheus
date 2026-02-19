@@ -1,0 +1,17 @@
+    <html>
+        <body>
+            <h1>Recipe Book</h1>
+            <h2>Ingredients</h2>
+            <div class="reci_ing1">
+                <ul>
+                {% for reciping1 in rec_ing1|slice:":5" %}
+                    <div class="rec_ing1">
+                        
+                            <li>{{reciping1.reci_ing.ing_name}} ({{reciping1.quantity}})</li>
+                        
+                    </div>
+                {% endfor %}
+                </ul>
+            </div>
+        </body>
+    </html>
