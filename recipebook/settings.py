@@ -39,8 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ledger'
+    'ledger',
+    'useraccounts'
 ]
+
+AUTH_USER_MODEL = 'ledger.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -123,3 +126,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = '/ledger/login'
+LOGIN_REDIRECT_URL = '/ledger/recipeslist'
+LOGOUT_REDIRECT_URL = '/ledger/login'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
