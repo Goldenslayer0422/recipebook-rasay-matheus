@@ -7,6 +7,8 @@ urlpatterns = [
     path("recipeslist", views.recipesPage, name="recipesPage"),
     path("recipe1", views.recipes1, name="recipe1"),
     path("recipe2", views.recipes2, name="recipe2"),
+    path("login", views.loginpage, name="login")
 ]
+
 
 # admin: monch, rasayispogi
