@@ -10,5 +10,13 @@
                 <li><a href="http://127.0.0.1:8000/ledger/recipe1"> Recipe 1 </a></li>
                 <li><a href="http://127.0.0.1:8000/ledger/recipe2"> Recipe 2 </a></li>
             </ul>
+            {% if user.is_authenticated %}
+                <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+                </form>
+            {% else %}
+                <a href="{% url 'login' %}">Login</a>
+            {% endif %}            
     </body>
 </html>
