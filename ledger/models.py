@@ -22,7 +22,24 @@ class RecipeIngredient(models.Model):
     recipefield = models.ForeignKey(Recipe, default=None, on_delete=models.CASCADE)
     def __str__(self):
         return self.ing_name
+    
+class RecipeImage(models.Model):
+    image = models.ImageField(
+        upload_to = "media/",
+        blank = False,
+        null = True
+    )
+    description = models.TextField(
+        max_length=255
+    )
+    recipe_key = models.ForeignKey(
+        Recipe,
+        null=True,
+        on_delete=models.CASCADE,
+        related_name="images"
+    )
 
 
 # Create your models here.
+
 
