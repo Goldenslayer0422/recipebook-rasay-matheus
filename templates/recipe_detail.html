@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block extra_head %}Recipe Detail{% endblock %}
+{% block content %}
+  <h2>{{ recipe.reci_name }}</h2>
+  <p><strong>Author:</strong> {{ recipe.author.name }}</p>
+
+  <h3>Images</h3>
+  {% for image in recipe.recipeimage_set.all %}
+    <img src="{{ image.image.url }}" alt="{{ image.description }}">
+    <p>{{ image.description }}</p>
+  {% empty %}
+    <p>No images uploaded...</p>
+  {% endfor %}
+
+  <a href="{% url 'recipeimager.html' recipe.pk %}">Add Image</a>
+{% endblock %}
