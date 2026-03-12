@@ -1,14 +1,13 @@
-<html>  
-    <head>
-        <meta charset="utf-8">
-        <title>Recipe Book</title>
-    </head>
-    <body>
+{% extends "base.html" %}
+
+        {% block title %}Recipe Book{% endblock %}
+        {% block content %}
             <h1>Recipe Book</h1>
             <h2>Links</h2>
             <ul>
                 <li><a href="http://127.0.0.1:8000/ledger/recipe1"> Recipe 1 </a></li>
                 <li><a href="http://127.0.0.1:8000/ledger/recipe2"> Recipe 2 </a></li>
+                <li><a href="http://127.0.0.1:8000/ledger/recipe/add"> Create New Recipe </a></li>
             </ul>
             {% if user.is_authenticated %}
                 <form action="{% url 'logout' %}" method="post">
@@ -17,6 +16,5 @@
                 </form>
             {% else %}
                 <a href="{% url 'login' %}">Login</a>
-            {% endif %}            
-    </body>
-</html>
+            {% endif %}       
+        {% endblock %}  
