@@ -1,5 +1,9 @@
-    <html>
-        <body>
+{% extends "base.html" %}
+
+
+            {% block title %}Recipes{% endblock %}
+
+            {% block content %}
             <h1>Recipe Book</h1>
             <h2>Ingredients</h2>
             <div class="reci_ing2">
@@ -22,5 +26,4 @@
                 <a href="{% url 'login' %}">Login</a>
             {% endif %}
 
-        </body>
-    </html>
+            {% endblock %}
